@@ -51,30 +51,38 @@
 
 <p align="justify">After gathering each of the above pieces of data, assess them visually and programmatically for quality and tidiness issues was our next step. We could detect and document the following quality issues and tidiness issues.</p>
 
-## Quality
+## Quality Issues
 
 **Completeness, Validity, Accuracy, Consistency => Has content issues archive dataset**
 
-    in_reply_to_status_id, in_reply_to_user_id, retweeted_status_id, retweeted_status_user_id should be intergs instead of float
-    retweeted_status_timestamp, timestamp should be datetime instead of object (string)
-    The numerator and denominator columns have invalid values
-    In several columns null objects are non-null (None to NaN)
-    Name column have invalid names i.e 'None', 'a', 'an'
-    We only want original ratings (no retweets) that have images
-    We may want to change this columns type (in_reply_to_status_id, in_reply_to_user_id, retweeted_status_id, retweeted_status_user_id and tweet_id) to string because We don't want any operations on them images dataset
-    Missing values from images dataset (2075 rows instead of 2356)
-    Some tweet_ids have the same jpg_url
-    Some tweets are have 2 different tweet_id one redirect to the other json_tweeets dataset
-    This tweet_id (666020888022790149) duplicated 8 times
+**1. archive_copy**
 
-## Tidiness
+- Missing values for dog stage (incomplete data for doggo, floofer, pupper, puppo).
+- Replace 'None' with 'NaN' for all dog stages.
+- Rating numerators and rating denominators values are incorrect.
+- Remove entries that are retweets and expanded URLs are unnecessary
+- tweet_id is numeric. Should be string.
+- Change tweet_archive timestampe from object type to datetime type.
+
+**2. image_predictions_copy**
+
+- Remove entries where p1_dog, p2_dog, and p3_dog are all "False".
+- Values for p1, p2, and p3 sometimes capitalized but not always .
+- tweet_id is numeric. Should be string.
+
+**3. tweet_data_copy**
+
+- tweet_id is numeric. Should be string.
+
+## Tidiness Issues
 
 **Untidy data => has structural issues**
 
-    No need to all the informations in images dataset, (tweet_id and jpg_url what matters)
-    Various stages of dogs in columns instead of rows archives dataset
-    We may want to add a gender column from the text columns in archives dataset
-    All tables should be part of one dataset
+   
+- Doggo, floofer, pupper, puppo are one variable spread across different columns in archive_copy.
+- rating_numerator and rating_denominator can be combined into one column in archive_copy.
+- Combine data frames by tweet_id.
+
 
 ## Cleaning
 
