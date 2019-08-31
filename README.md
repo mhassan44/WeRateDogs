@@ -51,7 +51,7 @@
 
 <p align="justify">After gathering each of the above pieces of data, assess them visually and programmatically for quality and tidiness issues was our next step. We could detect and document the following quality issues and tidiness issues.</p>
 
-## Quality Issues
+### A- Quality Issues
 
 **Completeness, Validity, Accuracy, Consistency => Has content issues archive dataset**
 
@@ -74,7 +74,7 @@
 
 - tweet_id is numeric. Should be string.
 
-## Tidiness Issues
+### B- Tidiness Issues
 
 **Untidy data => has structural issues**
 
@@ -89,6 +89,16 @@
 <p align="justify">Cleaning our data is the third step in data wrangling. It is where we fixed the quality and tidiness issues that we identified in the assess step.</p>
 
 <p align="justify">We used the two types of cleaning, the manual and programmatic even the manual not recommended but the issues were one-off occurrences. Our process was Define, Code and Test and we were always making a copy of the dataset even we made the copy in file to test the change before applying to the main dataset. We didn't spot all the quality and tidiness assessments at the assessing data section, so we have been iterating and revisiting assessing to add these assessments to our notes.</p>
+
+
+## Insights Summary
+
+- <p align="justify">The mean for rating is 1.127;the 3 most common ratings are 1.2,1.0,1.1, and rating frequency becomes smaller as the rating becomes extreme.</p>
+- <p align="justify">Posts with extreme ratings get more favorites and retweets.Posts with rating 1.4 gets the highest favorite counts and retweet 
+- <p align="justify">Favorites and retweets counts are highly positively correlated. For about every 4 favorites there is 1 retweet. Most of the data falls below 40000 favorites and 10000 retweets.</p>
+- <p align="justify">Favorites and retweets are the gradually increase over time.</p>
+- <p align="justify">Among the 4 dog stages, pupper has the biggest frequency, but pupper also gets the lowest favorite counts and retweet counts and rating.</p>
+
 
 ## Conclusion
 
